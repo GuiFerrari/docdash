@@ -1,0 +1,26 @@
+.orderStatus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #EBF0F5 0% 0% no-repeat padding-box;
+  border-radius: 2px;
+  padding: 0.2rem 0.5rem;
+  opacity: 1;
+
+  > div {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 0.5rem 0 0;
+  }
+
+  > span {
+    font-size: 0.875rem;
+    color: #585756;
+  }
+}
+
+.statusWarning {
+  background: #FFAF3E;
+}

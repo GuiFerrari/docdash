@@ -1,3 +1,18 @@
 .header {
-  background-color: darkorange;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: transparent linear-gradient(90deg, #5A5789 0%, #2D2C45 100%) 0% 0% no-repeat padding-box;
+  height: 56px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
 }

@@ -1,0 +1,20 @@
+.container {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 1px 2px #2E2D2C66;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.formHeader {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #D5D5D5;
+
+  > h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.formBody {
+  padding: 1.5rem;
+}

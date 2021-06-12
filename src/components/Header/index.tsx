@@ -1,15 +1,15 @@
 import React from 'react';
-import { Head } from 'next/document';
+import Image from 'next/image'
 
 import styles from './header.module.scss';
 
 const Header: React.FC = () => {
   return (
-    <>
-      <div className={styles.header}>
-        <h1>header</h1>
+    <div className={styles.header}>
+      <div className={styles.container}>
+        <Image src="/images/logo_docket.png" alt="Logo Docket Brasil" width="57" height="40" />
       </div>
-    </>
+    </div>
   );
 }
 

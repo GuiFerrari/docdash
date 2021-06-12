@@ -53,3 +53,27 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+// Grids
+
+.grid {
+  display: grid;
+}
+
+.grid-template-columns-1 {
+  grid-template-columns: 1fr;
+}
+
+.grid-template-columns-2 {
+  grid-template-columns: 2fr 3fr;
+}
+
+.gap-20 {
+	gap: 1.25rem;
+}
+
+// Margins
+
+.mt-1 {
+  margin: 1rem 0 0 0;
+}
