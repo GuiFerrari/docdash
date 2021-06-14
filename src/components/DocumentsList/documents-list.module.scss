@@ -1,0 +1,38 @@
+.container {
+  > h2 {
+    font-size: 1.25rem;
+    margin: 0 0 1rem;
+  }
+}
+
+.emptyContainer {
+  padding: 7.75rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > span {
+    color: var(--black60);
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+}
+
+.emptyIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--cold-grey) 0% 0% no-repeat padding-box;
+  border-radius: 50%;
+  margin: 0 0 1rem;
+  opacity: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > svg {
+    color: var(--cold-grey-40);
+  }
+}

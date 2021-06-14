@@ -1,11 +1,9 @@
-.header {
+.footer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 
-  position: fixed;
-  width: 100%;
-  top: 0;
+  margin: 3.125rem 0 0;
 
   background: transparent linear-gradient(90deg, #5A5789 0%, #2D2C45 100%) 0% 0% no-repeat padding-box;
   height: 3.5rem;
@@ -14,9 +12,14 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
+
+  > h2 {
+    color: var(--white);
+    font-size: 1.25rem;
+  }
 }

@@ -17,6 +17,7 @@
   --green-light: #DBFAF3;
   --unnamed-color-707070: #707070;
   --blue: #3570B2;
+  --blue-dark: #29588f;
   --white: #FFFFFF;
   --grey-40: #ABABAB;
   --cold-grey: #EBF0F5;
@@ -64,8 +65,16 @@ a {
   grid-template-columns: 1fr;
 }
 
+.grid-template-columns-1-1 {
+  grid-template-columns: 1fr 1fr;
+}
+
 .grid-template-columns-2 {
   grid-template-columns: 2fr 3fr;
+}
+
+.grid-template-columns-2-inverted {
+  grid-template-columns: 3fr 2fr;
 }
 
 .gap-20 {
@@ -76,4 +85,10 @@ a {
 
 .mt-1 {
   margin: 1rem 0 0 0;
+}
+
+// Widths
+
+.w-40 {
+  width: 40%;
 }

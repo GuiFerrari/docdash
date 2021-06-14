@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import styles from './header.module.scss';
 
-const Header: React.FC = () => {
+export default function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.container}>
@@ -12,5 +12,3 @@ const Header: React.FC = () => {
     </div>
   );
 }
-
-export default Header;

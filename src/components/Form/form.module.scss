@@ -18,3 +18,38 @@
 .formBody {
   padding: 1.5rem;
 }
+
+.form {
+  > div {
+    margin: 0 0 1rem 0;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  > h3 {
+    font-size: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  > button[type="submit"] {
+    margin: 1.5rem 0 0;
+    padding: 0.3rem 1rem;
+
+    background: var(--blue) 0% 0% no-repeat padding-box;
+    color: var(--white);
+    font-size: 0.875rem;
+    border-radius: 16px;
+    border: none;
+    outline: none;
+    opacity: 1;
+
+    transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:hover {
+       background: var(--blue-dark);
+       transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+}
