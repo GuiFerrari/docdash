@@ -77,6 +77,45 @@ export default function DocDashForm({
   const handleChangePersonType = useCallback((event) => {
     setPersonType(event.target.value)
   }, []);
+
+  const searchCep = useCallback((cep, setFieldValue) => {
+    axios
+      .get(`https://viacep.com.br/ws/${cep}/json/`)
+      .then((res) => {
+        if (res.data.erro) {
+          toast.error(`Erro ao buscar o CEP`);
+          setFieldValue(`city`, ``);
+          setFieldValue(`uf`, ``);
+        } else {
+          setFieldValue(`city`, res.data.localidade);
+          setFieldValue(`uf`, res.data.uf);
+        }
+      })
+      .finally(() => {
+        setCepComplete(true);
+        setLoadingCep(false);
+      });
+  }, []);
+
+  const handleChangeCep = useCallback((e, setFieldValue) => {
+    const { value } = e.target;
+    const lastCharacter = value.slice(-1);
+
+    setFieldValue('cep', value);
+
+    if (value) {
+      if (lastCharacter !== `_` && !loadingCep) {
+        if (!cepComplete) {
+          searchCep(value.replace(`-`, ``), setFieldValue);
+        }
+      } else {
+        setCepComplete(false);
+      }
+    } else {
+      setFieldValue(`city`, ``);
+      setFieldValue(`uf`, ``);
+    }
+  }, [loadingCep, searchCep, cepComplete]);
   
   const FormSchema = Yup.object().shape({
     documentName: Yup.string().required(`Nome do documento obrigatório`),
@@ -112,7 +151,7 @@ export default function DocDashForm({
         validationSchema={FormSchema}
         onSubmit={(values, actions) => handleSubmit(values, actions)}
       >
-        {({ errors }) => (
+        {({ errors, setFieldValue }) => (
           <Form className={styles.form}>
             <Input
               title="Nome do documento"
@@ -149,6 +188,7 @@ export default function DocDashForm({
                 name="cep"
                 mask="99999-999"
                 required
+                onChange={(e) => handleChangeCep(e, setFieldValue)}
                 error={errors.cep}
               />
             </div>
@@ -172,14 +212,18 @@ export default function DocDashForm({
               <Input
                 title="Cidade"
                 name="city"
+                placeholder=""
                 required
                 error={errors.city}
+                disabled
               />
               <Input
                 title="UF"
                 name="uf"
+                placeholder=""
                 required
                 error={errors.uf}
+                disabled
               />
             </div>
   

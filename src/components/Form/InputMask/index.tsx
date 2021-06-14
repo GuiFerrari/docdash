@@ -1,9 +1,10 @@
+import { InputHTMLAttributes } from 'react';
 import { Field } from 'formik';
 import MaskedInput from 'react-input-mask';
 
 import styles from './input-mask.module.scss';
 
-type InputProps = {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   title: string;
   placeholder?: string;
@@ -19,6 +20,7 @@ export default function InputMask({
   mask,
   required = false,
   error,
+  ...rest
 }: InputProps) {
   return (
     <div className={`${styles.input} ${error && styles.fieldError}`}>
@@ -33,6 +35,7 @@ export default function InputMask({
             {...field}
             placeholder={placeholder}
             mask={mask}
+            {...rest}
           />
         )}
       </Field>

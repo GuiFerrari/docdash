@@ -7,6 +7,7 @@ type InputProps = {
   title: string;
   placeholder?: string;
   required?: boolean;
+  disabled?: boolean
   error?: string;
 }
 
@@ -15,12 +16,13 @@ export default function Input({
   title,
   placeholder = "Digite aqui",
   required = false,
-  error
+  disabled = false,
+  error,
 }: InputProps) {
   return (
-    <div className={`${styles.input} ${error && styles.fieldError}`}>
+    <div className={`${styles.input} ${error && styles.fieldError} ${disabled && styles.disabled}`}>
       <label htmlFor={name}>{title}: <span>{required && '*'}</span></label>
-      <Field id={name} name={name} placeholder={placeholder} />
+      <Field id={name} name={name} placeholder={placeholder} disabled={disabled} />
       {error && (
         <span className={styles.error}>{error}</span>
       )}

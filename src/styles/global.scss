@@ -67,14 +67,26 @@ a {
 
 .grid-template-columns-1-1 {
   grid-template-columns: 1fr 1fr;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .grid-template-columns-2 {
   grid-template-columns: 2fr 3fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .grid-template-columns-2-inverted {
   grid-template-columns: 3fr 2fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .gap-20 {
