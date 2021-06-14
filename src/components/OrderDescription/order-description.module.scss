@@ -16,6 +16,7 @@
   > h2 {
     font-size: 1.25rem;
     font-weight: 600;
+    flex: 1;
   }
 }
 
@@ -38,10 +39,19 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .orderFooterItem {
   margin: 0 2.75rem 0 0;
+
+  @media (max-width: 768px) {
+    margin: 0 0 1rem;
+  }
 
   &:last-of-type {
     margin: 0;
